@@ -1,0 +1,17 @@
+{
+  "name": "ceren",
+  "version": "1.0.0",
+  "private": true,
+  "scripts": {
+    "cypress:run": "cypress run --headed",
+    "cypress:run:record": "cypress run --record",
+    "cypress:run:chrome": "cypress run --browser chrome"
+  },
+  "dependencies": {},
+  "devDependencies": {
+    "cypress": "9.5.2",
+    "eslint": "7.16.0",
+    "eslint-plugin-cypress-dev": "3.0.0"
+  },
+  "author": "Ceren Mert"
+}
