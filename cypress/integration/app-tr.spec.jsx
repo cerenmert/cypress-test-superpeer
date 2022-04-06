@@ -108,5 +108,18 @@ describe('Playing superpeer.com content', () => {
         });
     });
 
+    it('Check pop up title after clicked the share button, then close the share popup', () => {
+        cy.get('ytd-button-renderer:nth-of-type(1) > .style-scope.yt-simple-endpoint.ytd-button-renderer > yt-formatted-string#text')
+            .click()
+            .then(() => {
+                cy.get('div#title-bar h2#title')
+                    .should('be.visible')
+                    .then(() => {
+                        cy.get('yt-icon-button#close-button')
+                            .click();
+                    });
+            });
+    });
+
 
 });

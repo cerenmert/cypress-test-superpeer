@@ -116,9 +116,22 @@ describe('Playing superpeer.com content', () => {
             .click()
             .then(() => {
                 cy.get('.style-scope.ytd-popup-container > yt-formatted-string#title')
-                .invoke('text')
-                .should('be.equal', text);
+                  .invoke('text')
+                  .should('be.equal', text);
         });
+    });
+
+    it('Check pop up title after clicked the share button, then close the share popup', () => {
+        cy.get('ytd-button-renderer:nth-of-type(1) > .style-scope.yt-simple-endpoint.ytd-button-renderer > yt-formatted-string#text')
+            .click()
+            .then(() => {
+                cy.get('div#title-bar h2#title')
+                    .should('be.visible')
+                    .then(() => {
+                        cy.get('yt-icon-button#close-button')
+                            .click();
+                    });
+            });
     });
 
 
